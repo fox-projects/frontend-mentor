@@ -14,32 +14,8 @@
 		"stylelint-config-idiomatic-order": "^9.0.0",
 		"stylelint-order": "^6.0.3"
 	},
-	"postcss": {
-		"plugins": {
-			"postcss-sorting": {
-				"order": [
-					"custom-properties",
-					"dollar-variables",
-					"at-variables",
-					"declarations",
-					"rules",
-					"at-rules"
-				],
-				"properties-order": [
-					"position",
-					"display",
-					"top",
-					"bottom",
-					"left",
-					"right",
-					"inset"
-				],
-				"unspecified-properties-position": "bottom"
-			}
-		}
-	},
 	"scripts": {
-		"start": "parcel serve ./index.html --dist-dir ./output",
+		"serve": "parcel serve ./index.html --dist-dir ./output",
 		"build": "parcel build ./index.html",
 		"format": "run-s format:prettier format:stylelint",
 		"format:stylelint": "stylelint --fix \"./**/*.css\"",
