@@ -1,0 +1,2 @@
+const e=document.querySelector("button.newsletter-subscribe"),t=document.querySelector("button.dismiss-message"),a=document.querySelector(".card-stay-updated"),r=document.querySelector(".card-thanks-for-subscribing");e.addEventListener("click",e=>{a.attributeStyleMap.set("display",new CSSKeywordValue("none")),r.attributeStyleMap.set("display",new CSSKeywordValue("block"))}),t.addEventListener("click",e=>{a.attributeStyleMap.set("display",new CSSKeywordValue("flex")),r.attributeStyleMap.set("display",new CSSKeywordValue("none"))});
+//# sourceMappingURL=index.411c021a.js.map
