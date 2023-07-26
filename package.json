@@ -39,7 +39,7 @@
 		}
 	},
 	"scripts": {
-		"start": "parcel serve ./index.html",
+		"start": "parcel serve ./index.html --dist-dir ./output",
 		"build": "parcel build ./index.html",
 		"format": "run-s format:prettier format:stylelint",
 		"format:stylelint": "stylelint --fix \"./**/*.css\"",
