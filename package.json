@@ -47,7 +47,8 @@
 	},
 	"targets": {
 		"default": {
-			"distDir": "./output"
+			"distDir": "./output",
+			"publicUrl": "/frontend-mentor"
 		}
 	},
 	"stylelint": {
