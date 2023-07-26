@@ -9,89 +9,21 @@
 			sizes="32x32"
 			href="./assets/images/favicon-32x32.png"
 		/>
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<script type="module" defer src="./script.js"></script>
 		<title>
 			Frontend Mentor | Newsletter sign-up form with success message
 		</title>
-		<style>
-			:root {
-				--tomato: hsl(4, 100%, 67%);
-				--dark-slate-gray: hsl(234, 29%, 20%);
-				--charcoal-grey: hsl(235, 18%, 26%);
-				--grey: hsl(231, 7%, 60%);
-				--white: hsl(0, 0%, 100%);
-				--body-font-size: 16px;
-			}
-
-			*,
-			*::before,
-			*::after {
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-				border: 0;
-				font-family: 'Roboto', sans;
-			}
-
-			html,
-			body {
-				height: 100%;
-				background-color: var(--charcoal-grey);
-			}
-
-			body {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-
-			.card {
-				display: flex;
-				background-color: var(--white);
-				padding: 20px;
-				border-radius: 25px;
-			}
-
-			.card-left {
-				margin: 60px;
-			}
-
-			.card-left > h1 {
-				font-size: 48px;
-				margin-block-end: 10px;
-			}
-
-			.card-left > p {
-				margin-block-end: 20px;
-			}
-
-			.card-left > ul {
-				margin-block-end: 20px;
-				width: 100%;
-			}
-
-			.card-left li {
-				list-style-image: url('./assets/images/icon-list.svg');
-			}
-
-			.card-left button {
-				padding-block: 20px;
-				border-radius: 5px;
-				width: 100%;
-				background-color: var(--dark-slate-gray);
-				color: var(--white);
-				font-weight: 700;
-			}
-
-			@media (min-width: 768px) {
-				.card {
-					align-items: center;
-				}
-			}
-		</style>
 	</head>
 	<body>
 		<main>
-			<section class="card">
+			<section class="card card-stay-updated">
 				<div class="card-left">
 					<h1>Stay updated!</h1>
 					<p>Join 60,000+ product managers receiving monthly updates on:</p>
@@ -107,28 +39,20 @@
 							type="email"
 							id="email"
 							name="email"
-							placeholder="Email address"
+							placeholder="email@company.com"
 						/>
 						<br />
-						<button type="input">Subscribe to monthly newsletter</button>
+						<button class="newsletter-subscribe" type="button">
+							Subscribe to monthly newsletter
+						</button>
 					</form>
-
-					<!-- Sign-up form end -->
-
-					<!-- Success message start -->
-
-					<!-- Thanks for subscribing! A confirmation email has been sent to
-				ash@loremcompany.com. Please open it and click the button inside to
-				confirm your subscription. Dismiss message -->
-
-					<!-- Success message end -->
 				</div>
 
 				<div class="card-right">
 					<picture>
 						<source
 							srcset="./assets/images/illustration-sign-up-mobile.svg"
-							media="(max-width: 375px)"
+							media="(max-width: 1200px)"
 						/>
 						<img
 							src="./assets/images/illustration-sign-up-desktop.svg"
@@ -137,6 +61,20 @@
 						/>
 					</picture>
 				</div>
+			</section>
+			<section class="card card-thanks-for-subscribing" style="display: none">
+				<img
+					src="./assets/images/icon-success.svg"
+					alt="A checkmark icon"
+					role="presentation"
+				/>
+				<h1>Thanks for subscribing!</h1>
+				<p>
+					A confirmation email has been sent to
+					<a href="mailto:ash@loremcompany.com">ash@loremcompany.com</a>. Please
+					open it and click the button inside to confirm your subscription.
+				</p>
+				<button class="dismiss-message" type="button">Dismiss message</button>
 			</section>
 		</main>
 	</body>

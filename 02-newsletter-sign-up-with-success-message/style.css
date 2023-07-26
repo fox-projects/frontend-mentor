@@ -1,0 +1,146 @@
+:root {
+	--tomato: hsl(4, 100%, 67%);
+	--dark-slate-gray: hsl(234, 29%, 20%);
+	--charcoal-grey: hsl(235, 18%, 26%);
+	--grey: hsl(231, 7%, 60%);
+	--white: hsl(0, 0%, 100%);
+	--body-font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	border: 0;
+	margin: 0;
+	font-family: 'Roboto', sans;
+}
+
+html,
+body {
+	height: 100%;
+	background-color: var(--charcoal-grey);
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+img {
+	width: 100%;
+}
+
+h1 {
+	color: var(--dark-slate-gray);
+	font-size: 48px;
+	line-height: 110%;
+	margin-block-end: 20px;
+}
+
+p {
+	line-height: 150%;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+	color: var(--dark-slate-gray);
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.card {
+	display: flex;
+	padding: 20px;
+	border-radius: 25px;
+	background-color: var(--white);
+}
+
+.card-left {
+	margin: 29px;
+	margin-top: 49px;
+	margin-right: 49px;
+}
+
+.card-left > p {
+	margin-block-end: 20px;
+}
+
+.card-left > ul {
+	width: 100%;
+	margin-block-end: 20px;
+}
+
+.card-left li {
+	background: url('./assets/images/icon-list.svg') left center no-repeat;
+	line-height: 200%;
+	list-style-type: none;
+	padding-inline-start: 35px;
+	/* list-style-image: url('./assets/images/icon-list.svg');
+	list-style-position: inside; */
+}
+
+.card-left label {
+	color: var(--dark-slate-gray);
+	font-size: 12px;
+	font-weight: 700;
+}
+.card-left input {
+	width: 100%;
+	padding: 15px;
+	border: 2px solid var(--grey);
+	border-radius: 7px;
+	margin-block-end: 20px;
+	margin-block-start: 5px;
+}
+
+.card-left button {
+	width: 100%;
+	border-radius: 10px;
+	background-color: var(--dark-slate-gray);
+	color: var(--white);
+	cursor: pointer;
+	font-weight: 700;
+	padding-block: 20px;
+}
+
+.card-thanks-for-subscribing {
+	width: 460px;
+	padding: 50px;
+	color: var(--dark-slate-gray);
+
+	& img {
+		width: 50px;
+		margin-block-end: 20px;
+	}
+
+	& p {
+		margin-block-end: 30px;
+	}
+
+	& > button {
+		width: 100%;
+		border-radius: 10px;
+		background-color: var(--dark-slate-gray);
+		color: var(--white);
+		padding-block: 20px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.card {
+		flex-direction: column-reverse;
+		padding: 0;
+		border-radius: 15px;
+		overflow: hidden;
+		width: 400px;
+	}
+
+	.card-thanks-for-subscribing {
+		padding: 50px;
+	}
+}
