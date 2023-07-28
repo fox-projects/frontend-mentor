@@ -1,0 +1,53 @@
+name: 'Build and Deploy'
+
+on:
+  push:
+    branches: ['main']
+
+permissions:
+  contents: 'read'
+  pages: 'write'
+  id-token: 'write'
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: 'bash'
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: 'actions/checkout@v3'
+      - uses: 'actions/setup-node@v3'
+        with:
+          node-version: 18
+      - uses: 'pnpm/action-setup@v2'
+        with:
+          version: 8
+      - name: Retrieve cache directory
+        run: 'printf "%s\n" "STORE_PATH=$(pnpm store path --silent)" >> "$GITHUB_ENV"'
+      - uses: 'actions/cache@v3'
+        name: 'Setup pnpm cache'
+        with:
+          path: '${{ env.STORE_PATH }}'
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - run: 'pnpm install'
+      - run: 'pnpm run build'
+      - uses: 'actions/upload-pages-artifact@v2'
+        with:
+          path: './output'
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v2
