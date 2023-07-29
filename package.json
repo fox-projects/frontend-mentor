@@ -15,17 +15,11 @@
 		"stylelint-order": "^6.0.3"
 	},
 	"scripts": {
-		"serve": "parcel serve ./index.html --dist-dir ./output",
-		"build": "parcel build ./index.html",
+		"serve": "parcel serve --dist-dir ./output ./index.html",
+		"build": "parcel build --dist-dir ./output --public-url /frontend-mentor --no-optimize ./index.html",
 		"format": "run-s format:prettier format:stylelint",
 		"format:stylelint": "stylelint --fix \"./**/*.css\"",
 		"format:prettier": "prettier --write \"./**/*.{html,css,js,md}\""
-	},
-	"targets": {
-		"default": {
-			"distDir": "./output",
-			"publicUrl": "/frontend-mentor"
-		}
 	},
 	"stylelint": {
 		"extends": [
