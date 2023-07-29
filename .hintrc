@@ -1,5 +1,8 @@
 {
+	"connector": "local",
+	"extends": ["development", "web-recommended", "accessibility"],
 	"hints": {
-		"no-inline-styles": "off"
+		"no-inline-styles": "off",
+		"html-checker": "error"
 	}
 }
