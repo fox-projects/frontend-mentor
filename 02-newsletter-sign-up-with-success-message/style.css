@@ -31,16 +31,17 @@ body {
 
 img {
 	width: 100%;
+	height: auto;
 }
 
 h1 {
 	color: var(--dark-slate-gray);
-	font-size: 48px;
 	line-height: 110%;
-	margin-block-end: 20px;
+	margin-block-end: 25px;
 }
 
 p {
+	color: var(--dark-slate-gray);
 	line-height: 150%;
 }
 
@@ -55,15 +56,26 @@ a:active {
 
 .card {
 	display: flex;
-	padding: 20px;
-	border-radius: 25px;
+	border-radius: 30px;
 	background-color: var(--white);
+	box-shadow: 2px 2px 4px var(--charcoal-grey);
+}
+
+.card-stay-updated {
+	width: 925px;
+	height: 635px;
+
+	padding: 20px;
 }
 
 .card-left {
-	margin: 29px;
-	margin-top: 49px;
-	margin-right: 49px;
+	margin-block-start: 70px;
+	margin-inline: 45px;
+	margin-inline-end: 50px;
+}
+
+.card-left > h1 {
+	font-size: 3.25rem;
 }
 
 .card-left > p {
@@ -71,31 +83,35 @@ a:active {
 }
 
 .card-left > ul {
-	width: 100%;
-	margin-block-end: 20px;
+	margin-block-end: 35px;
 }
 
 .card-left li {
 	background: url('./assets/images/icon-list.svg') left center no-repeat;
 	line-height: 200%;
 	list-style-type: none;
-	padding-inline-start: 35px;
-	/* list-style-image: url('./assets/images/icon-list.svg');
-	list-style-position: inside; */
+	padding-inline-start: 37px;
+
+	&:not(:last-child) {
+		margin-block-end: 3px;
+	}
 }
 
 .card-left label {
 	color: var(--dark-slate-gray);
-	font-size: 12px;
+	font-size: 0.625rem;
 	font-weight: 700;
 }
+
 .card-left input {
 	width: 100%;
-	padding: 15px;
-	border: 2px solid var(--grey);
+	padding: 16px;
+	border: 1px solid var(--grey);
 	border-radius: 7px;
+	color: var(--white);
+	font-size: 1rem;
 	margin-block-end: 20px;
-	margin-block-start: 5px;
+	margin-block-start: 7px;
 }
 
 .card-left button {
@@ -104,14 +120,19 @@ a:active {
 	background-color: var(--dark-slate-gray);
 	color: var(--white);
 	cursor: pointer;
+	font-size: 1rem;
 	font-weight: 700;
 	padding-block: 20px;
+}
+
+.card-right img {
+	width: 400px;
 }
 
 .card-thanks-for-subscribing {
 	width: 460px;
 	padding: 50px;
-	color: var(--dark-slate-gray);
+	color: var(--grey);
 
 	& img {
 		width: 50px;
@@ -134,10 +155,19 @@ a:active {
 @media (max-width: 1200px) {
 	.card {
 		overflow: hidden;
-		width: 400px;
+		width: 100%;
+		height: auto;
 		flex-direction: column-reverse;
 		padding: 0;
 		border-radius: 15px;
+	}
+
+	.card .card-left {
+		margin-block-start: 35px;
+	}
+
+	.card .card-left h1 {
+		font-size: 2.5rem;
 	}
 
 	.card-thanks-for-subscribing {
